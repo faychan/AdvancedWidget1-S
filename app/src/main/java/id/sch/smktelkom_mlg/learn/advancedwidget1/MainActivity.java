@@ -12,8 +12,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    Spinner spJumlah;
-    LinearLayout llAnak;
+    Spinner spNummer;
+    LinearLayout llKinder;
     TextView tvHasil;
 
     @Override
@@ -21,16 +21,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        spJumlah = (Spinner) findViewById(R.id.spinnerJumlahAnak);
-        Integer[] arJumlah = new Integer[10];
+        spNummer = (Spinner) findViewById(R.id.spinnerNummerKinder);
+        Integer[] arNummer = new Integer[10];
         for (int i = 0; i < 10; i++) {
-            arJumlah[i] = i + 1;
+            arNummer[i] = i + 1;
         }
-        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, arJumlah);
+        ArrayAdapter adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, arNummer);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spJumlah.setAdapter(adapter);
+        spNummer.setAdapter(adapter);
 
-        llAnak = (LinearLayout) findViewById(R.id.linearLayoutAnak);
+        llKinder = (LinearLayout) findViewById(R.id.linearLayoutKinder);
         tvHasil = (TextView) findViewById(R.id.textViewHasil);
 
         findViewById(R.id.buttonProses).setOnClickListener(new View.OnClickListener() {
@@ -40,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        spJumlah.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        spNummer.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int i, long l) {
-                addEditText((int) spJumlah.getSelectedItem());
+                addEditText((int) spNummer.getSelectedItem());
             }
 
             @Override
@@ -54,19 +54,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addEditText(int jumlah) {
-        llAnak.removeAllViews();
+        llKinder.removeAllViews();
         for (int i = 1; i <= jumlah; i++) {
-            View v = LayoutInflater.from(this).inflate(R.layout.layout_anak, llAnak, false);
-            v.setTag("Anak" + i);
-            llAnak.addView(v);
+            View v = LayoutInflater.from(this).inflate(R.layout.layout_anak, llKinder, false);
+            v.setTag("Kinder" + i);
+            llKinder.addView(v);
         }
     }
 
     private void doProses() {
-        int jumlah = (int) spJumlah.getSelectedItem();
+        int jumlah = (int) spNummer.getSelectedItem();
         String hasil = "";
         for (int i = 1; i <= jumlah; i++) {
-            LinearLayout llNow = (LinearLayout) llAnak.findViewWithTag("Anak" + i);
+            LinearLayout llNow = (LinearLayout) llKinder.findViewWithTag("Kinder" + i);
 
             EditText etNama = (EditText) llNow.findViewById(R.id.editTextNama);
             EditText etUmur = (EditText) llNow.findViewById(R.id.editTextUmur);
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
             if (umur.isEmpty())
                 umur = "0";
             if (!nama.isEmpty())
-                hasil += "Anak ke-" + i + ": " + nama + " umur " + umur + " tahun\n";
+                hasil += "Kinder ke-" + i + ": " + nama + " umur " + umur + " tahun\n";
         }
         tvHasil.setText(hasil);
     }

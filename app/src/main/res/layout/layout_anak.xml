@@ -14,7 +14,7 @@
             android:id="@+id/editTextNama"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Nama Anak" />
+            android:hint="Nama Kinder" />
 
     </android.support.design.widget.TextInputLayout>
 
