@@ -11,10 +11,10 @@
         android:layout_weight="0.8">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/editTextNama"
+            android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Nama Kinder" />
+            android:hint="Name des Kinder" />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -24,10 +24,10 @@
         android:layout_weight="0.2">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/editTextUmur"
+            android:id="@+id/editTextAlter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Umur"
+            android:hint="Alter"
             android:maxLength="2" />
 
     </android.support.design.widget.TextInputLayout>

@@ -15,7 +15,7 @@
         tools:context="id.sch.smktelkom_mlg.learn.advancedwidget1.MainActivity">
 
         <Spinner
-            android:id="@+id/spinnerNummerKinder"
+            android:id="@+id/spinnerAnzahlKinder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -29,13 +29,13 @@
             android:id="@+id/buttonProses"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Proses" />
+            android:text="Prozess" />
 
         <TextView
-            android:id="@+id/textViewHasil"
+            android:id="@+id/textViewErgebnis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:text="Hasil" />
+            tools:text="Ergebnis" />
 
     </LinearLayout>
 
